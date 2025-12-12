@@ -53,6 +53,7 @@ def alterConfigs(dirs, oldConfigs,newConfigs):
 #alterConfigs(["/etc/sysctl.conf"],[["net.ipv4.conf.all.accept_redirects","net.ipv4.ip_forward","net.ipv4.conf.all.send_redirects","net.ipv4.conf.default.send_redirects","net.ipv4.conf.all.rp_filter","net.ipv4.conf.all.accept_source_route","net.ipv4.tcp_max_syn_backlog","net.ipv4.tcp_synack_retries","net.ipv4.tcp_syn_retries","net.ipv4.tcp_syncookies","net.ipv6.conf.all.disable_ipv6","net.ipv6.conf.default.disable_ipv6","net.ipv6.conf.lo.disable_ipv6"]],[["net.ipv4.conf.all.accept_redirects = 0","net.ipv4.ip_forward = 0","net.ipv4.conf.all.send_redirects = 0","net.ipv4.conf.default.send_redirects = 0","net.ipv4.conf.all.rp_filter=1","net.ipv4.conf.all.accept_source_route=0","net.ipv4.tcp_max_syn_backlog = 2048","net.ipv4.tcp_synack_retries = 2","net.ipv4.tcp_syn_retries = 5","net.ipv4.tcp_syncookies = 1","net.ipv6.conf.all.disable_ipv6 = 1","net.ipv6.conf.default.disable_ipv6 = 1","net.ipv6.conf.lo.disable_ipv6 = 1"]])
 #pam configs
 #alterConfigs(["/etc/login.defs"],[["FAILLOG_ENAB","LOG_UNKFAIL_ENAB","SYSLOG_SU_ENAB","SYSLOG_SG_ENAB","PASS_MAX_DAYS","PASS_MIN_DAYS","PASS_WARN_AGE"]],[["FAILLOG_ENAB yes","LOG_UNKFAIL_ENAB yes","SYSLOG_SU_ENAB yes","SYSLOG_SG_ENAB yes","PASS_MAX_DAYS 90","PASS_MIN_DAYS 10","PASS_WARN_AGE 7"]])
-#lightdm configs
+#lightdm configs (UBUNTU ONLY)
 #alterConfigs(["/usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"],[["allow-guest","greeter-hide-users","greeter-show-manual-login","autologin-user"]],[["allow-guest=fals","greeter-hide-users=true","greeter-show-manual-login=true","autologin-user=none"]])
+
 
