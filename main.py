@@ -54,6 +54,7 @@ def alterConfigs(dirs, oldConfigs,newConfigs):
 #pam configs
 #alterConfigs(["/etc/login.defs"],[["FAILLOG_ENAB","LOG_UNKFAIL_ENAB","SYSLOG_SU_ENAB","SYSLOG_SG_ENAB","PASS_MAX_DAYS","PASS_MIN_DAYS","PASS_WARN_AGE"]],[["FAILLOG_ENAB yes","LOG_UNKFAIL_ENAB yes","SYSLOG_SU_ENAB yes","SYSLOG_SG_ENAB yes","PASS_MAX_DAYS 90","PASS_MIN_DAYS 10","PASS_WARN_AGE 7"]])
 #lightdm configs (UBUNTU ONLY)
-#alterConfigs(["/usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"],[["allow-guest","greeter-hide-users","greeter-show-manual-login","autologin-user"]],[["allow-guest=fals","greeter-hide-users=true","greeter-show-manual-login=true","autologin-user=none"]])
+#alterConfigs(["/usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"],[["allow-guest","greeter-hide-users","greeter-show-manual-login","autologin-user"]],[["allow-guest=false","greeter-hide-users=true","greeter-show-manual-login=true","autologin-user=none"]])
+
 
 
