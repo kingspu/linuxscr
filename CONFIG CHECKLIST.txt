@@ -1,0 +1,72 @@
+CONFIG CHECKLIST:
+
+/etc/lightdm/lightdm.conf or /usr/share/lightdm/lightdm.conf/50-ubuntu.conf or /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
+
+allow-guest=false
+greeter-hide-users=true
+greeter-show-manual-login=true
+autologin-user=none
+
+/etc/login.defs
+FAILLOG_ENAB yes
+LOG_UNKFAIL_ENAB yes
+SYSLOG_SU_ENAB yes
+SYSLOG_SG_ENAB yes
+PASS_MAX_DAYS 90
+PASS_MIN_DAYS 10
+PASS_WARN_AGE 7
+Add the following to the line that ends in difok=3 to /etc/pam.d/common-password.  ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1
+
+/etc/ssh/sshd_config
+LoginGraceTime 60
+PermitRootLogin no
+Protocol 2
+PermitEmptyPasswords no
+PasswordAuthentication yes
+X11Forwarding no
+UsePAM yes
+UsePrivilegeSeparation yes
+
+/etc/sysctl.conf file
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.ip_forward = 0
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.conf.default.send_redirects = 0
+net.ipv4.conf.all.rp_filter=1
+net.ipv4.conf.all.accept_source_route=0
+net.ipv4.tcp_max_syn_backlog = 2048
+net.ipv4.tcp_synack_retries = 2
+net.ipv4.tcp_syn_retries = 5
+net.ipv4.tcp_syncookies = 1
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+
+/etc/mysql/my.cnf
+bind-address=127.0.0.1
+local-infile=0
+#ADD SQLID
+
+Ignore below This line lowkenuinely
+
+###########################
+/etc/apache2/apache2.conf
+ServerSignature Off
+ServerTokens Prod
+
+AFTER user "apache" is created
+/etc/apache2/apache2.conf file
+User apache
+Group apache
+
+
+
+###################
+/etc/php5/apache2/php.ini
+expose_php = Off
+allow_url_fopen=Off
+allow_url_include=Off
+disable_functions=exec,shell_exec,passthru,system,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source,proc_open,pcntl_exec
+upload_max_filesize = 2M
+max_execution_time = 30
+max_input_time = 60
